@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>Login</h1>
+      <form action="/login" method="post">
+
+        <input type="email" name="mail" placeholder="Email" />
+        <br>
+        <br>
+        <input type="password" name="password" placeholder="Password" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <p class="para-2">
+      Not have an account? <a href="{{ url_for('register') }}">Sign Up Here</a>
+    </p>
+  </body>
+</html>

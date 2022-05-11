@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Book</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+    </style>
+</head>
+<body >
+<div class="w3-container w3-teal">
+    <h1><center>Contact Book</center></h1>
+</div>
+
+<div class="w3-container">
+   <h2 style="color:#72a37f">Your Contacts</h2><a href="/new"><input style="background-color:#72a37f;color:white" type="button" value="Add New"></a>
+    <h6>{{ msg }}</h6>
+
+    <table  class="w3-table-all">
+    <thead>
+      <tr class="w3-green">
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Relationship</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th colspan="2" style="text-align:Center">Action</th>
+      </tr>
+    </thead>
+    {% for row in rows %}
+    <tr>
+        <td>{{row['fullname']}}</td>
+        <td>{{row['contact']}}</td>
+        <td>{{row['relationship']}}</td>
+        <td>{{row['email']}}</td>
+        <td>{{row['address']}}</td>
+        <td style="background-color:#72a37f;color:white"><a href="/{{row['uid']}}/edit">Edit</a>
+        <td style="background-color:#72a37f;color:white"><a href="/{{row['uid']}}/delete" onclick='return confirm("Are you sure") '>Delete</a>
+    </tr>
+    {% endfor %}
+  </table>
+
+</div>
+
+</body>
+</html>

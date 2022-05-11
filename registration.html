@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1>Sign Up</h1>
+      <form action="/register" method="POST">
+
+        <input type="text" name="name" placeholder="Full Name" />
+        <br><br>
+        <input type="text" name="address" placeholder="Address" />
+        <br><br>
+        <input type="text" name="contact" placeholder="Contact" />
+        <br><br>
+        <input type="email" name="mail" placeholder="Email" />
+        <br><br>
+        <input type="password" name="password" placeholder="Password" />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="{{ url_for('index') }}">Login here</a>
+    </p>
+  </body>
+</html>
